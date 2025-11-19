@@ -293,6 +293,7 @@ $ pip install spyder
 
 ```bash
 $ pip install jupyter
+$ sudo apt install texlive-xetex # Pour export PDF dans Jupyter Notebook
 ```
 
 
@@ -406,12 +407,13 @@ $ sudo apt install libiio-utils
 $ iio_info -u ip:192.168.2.1
 ```
 
-- Logiciel Scopy :
+- Logiciel Scopy à télécharger sur le site d'Analog Device au format `flapak` :
 
 ```bash
 $ sudo flatpak install Scopy-v1.4.1-Linux-x86-64.flatpak
 $ flatpak run org.adi.Scopy
 ```
+Lourd à installer !
 
 - Libairie `libm2k`  (problème avec 24.04)
 
