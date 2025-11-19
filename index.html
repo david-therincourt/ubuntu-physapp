@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Post-installation Ubuntu 24.04</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Post-installation Ubuntu 24.04</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#ubuntu-2404-post-installation" class="nav-link">Ubuntu 24.04 - Post installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bases" class="nav-link">Bases</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#gnome" class="nav-link">Gnome</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#flatpak" class="nav-link">Flatpak</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#appimage-support" class="nav-link">AppImage support</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wine" class="nav-link">Wine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ramdisk" class="nav-link">RamDisk</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#console" class="nav-link">Console</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#web" class="nav-link">Web</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#chrome" class="nav-link">Chrome</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#chromium" class="nav-link">Chromium</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#multimedia" class="nav-link">Multimédia</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#codecs-mp3" class="nav-link">Codecs MP3, ...</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#video" class="nav-link">Vidéo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bureautique" class="nav-link">Bureautique</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#utilitaires-pdf" class="nav-link">Utilitaires PDF</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#copie-decran-et-annotation-dimage" class="nav-link">Copie d'écran et annotation d'image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#markdown" class="nav-link">Markdown</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#pandoc" class="nav-link">Pandoc</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#editeurs-supplementaires" class="nav-link">Editeurs supplémentaires</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#marktext" class="nav-link">Marktext</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#sphinx" class="nav-link">Sphinx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#latex" class="nav-link">LaTeX</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#texlive" class="nav-link">TeXlive</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#verification-de-syntaxe" class="nav-link">Vérification de syntaxe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compilation-automatique" class="nav-link">Compilation automatique</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#editeurs" class="nav-link">Editeurs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#vscode" class="nav-link">VSCode</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#extension-french-language-pack" class="nav-link">Extension French Language Pack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#extension-latex" class="nav-link">Extension Latex</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#extension-sphynx" class="nav-link">Extension Sphynx</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#python" class="nav-link">Python</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#python-is-python-3" class="nav-link">Python is Python 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pip" class="nav-link">PIP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#librairies" class="nav-link">Librairies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#editeurs_1" class="nav-link">Editeurs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#spyder" class="nav-link">Spyder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#jupyter" class="nav-link">Jupyter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#physique" class="nav-link">Physique</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#latis" class="nav-link">Latis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#regressi" class="nav-link">Regressi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#ltspice" class="nav-link">LTSpice</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#microcontroleurs" class="nav-link">Microcontrôleurs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#udev-rules" class="nav-link">Udev rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#arduino-ide-18x" class="nav-link">Arduino IDE 1.8.x</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#arduino-ide-2" class="nav-link">Arduino IDE 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#esp32" class="nav-link">ESP32</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#interfaces-usb" class="nav-link">Interfaces USB</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#digilent-analog-discovery-3" class="nav-link">Digilent Analog Discovery 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#analog-device-adalm-2000" class="nav-link">Analog Device ADALM 2000</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#radio-logiciel-sdr" class="nav-link">Radio Logiciel (SDR)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#logiciel-gnu-radio" class="nav-link">Logiciel GNU Radio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#logiciel-gqrx-sdr" class="nav-link">Logiciel Gqrx SDR</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#carte-usrp-b200" class="nav-link">Carte USRP B200</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#carte-adalm-pluto" class="nav-link">Carte ADALM Pluto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ubuntu-2404-post-installation">Ubuntu 24.04 - Post installation</h1>
+<h1 id="bases">Bases</h1>
+<h2 id="gnome">Gnome</h2>
+<pre><code class="language-bash">$ sudo apt-get install gnome-tweaks gnome-shell-extensions
+</code></pre>
+<h2 id="flatpak">Flatpak</h2>
+<pre><code class="language-bash">$ sudo apt install flatpak
+$ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre>
+<h2 id="appimage-support">AppImage support</h2>
+<pre><code class="language-bash">$ sudo apt install libfuse2t64
+</code></pre>
+<h2 id="wine">Wine</h2>
+<pre><code class="language-bash">$ sudo apt install wine64 wine32:i386 ttf-mscorefonts-installer
+$ wine msiexec /i application.msi
+</code></pre>
+<h2 id="ramdisk">RamDisk</h2>
+<p>Pour limiter l'écriture de fichiers temporaires (Firefox, Compilation LaTex, ...) sur le disque SSD, il est préférable de monter le répertoire <code>/tmp</code> dans la RAM. Pour un montage automatique au démarrage, ajouter la ligne suivante à la fin du fichier <code>/etc/fstab</code> : </p>
+<pre><code class="language-bash">tmpfs /tmp tmpfs defaults,size=2048M 0 0
+</code></pre>
+<h2 id="console">Console</h2>
+<p>Supprimer le chemin long dans le prompt à partir du  fichier <code>.bashrc</code>  : changer <code>w</code> par <code>W</code>  !</p>
+<pre><code class="language-bash">if [ &quot;$color_prompt&quot; = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+fi
+</code></pre>
+<h1 id="web">Web</h1>
+<h2 id="chrome">Chrome</h2>
+<pre><code class="language-bash">$ sudo wget -O- https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg
+$ echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+$ sudo apt update
+$ sudo apt install google-chrome-stable
+</code></pre>
+<h2 id="chromium">Chromium</h2>
+<pre><code class="language-bash">$ sudo snap install chromium 
+</code></pre>
+<h1 id="multimedia">Multimédia</h1>
+<h2 id="codecs-mp3">Codecs MP3, ...</h2>
+<pre><code class="language-bash">$ sudo apt install ubuntu-restricted-extras
+</code></pre>
+<h2 id="video">Vidéo</h2>
+<pre><code class="language-bash">$ sudo apt install vlc mplayer mplayer-gui
+</code></pre>
+<h1 id="bureautique">Bureautique</h1>
+<h2 id="utilitaires-pdf">Utilitaires PDF</h2>
+<pre><code class="language-bash">$ sudo apt-get install xournal xournalpp pdfarranger 
+</code></pre>
+<h2 id="copie-decran-et-annotation-dimage">Copie d'écran et annotation d'image</h2>
+<pre><code class="language-bash">$ sudo apt install ksnip
+</code></pre>
+<h1 id="markdown">Markdown</h1>
+<h2 id="pandoc">Pandoc</h2>
+<p>Conversion entre formats de balisage.</p>
+<pre><code class="language-bash">$ sudo apt install pandoc context
+</code></pre>
+<h2 id="editeurs-supplementaires">Editeurs supplémentaires</h2>
+<pre><code class="language-bash">$ sudo apt install ghostwriter retext apostrophe
+</code></pre>
+<h2 id="marktext">Marktext</h2>
+<p>Installation manuel à partir DEB sur Github !</p>
+<p>Eviter Flatpak !</p>
+<pre><code class="language-bash">$ sudo flatpak install flathub com.github.marktext.marktext
+</code></pre>
+<h1 id="sphinx">Sphinx</h1>
+<pre><code class="language-bash">$ sudo apt install python3-stemmer
+$ pip install --break-system-packages sphinx sphinx-rtd-theme sphinx-copybutton sphinx-prompt esbonio
+</code></pre>
+<h1 id="latex">LaTeX</h1>
+<h2 id="texlive">TeXlive</h2>
+<pre><code class="language-bash">$ sudo apt install texlive texlive-lang-french texlive-latex-extra 
+$ sudo apt install texlive-science texlive-fonts-extra texlive-publishers
+</code></pre>
+<h2 id="verification-de-syntaxe">Vérification de syntaxe</h2>
+<pre><code class="language-bash">$ sudo apt install chktex
+</code></pre>
+<h2 id="compilation-automatique">Compilation automatique</h2>
+<pre><code class="language-bash">$ sudo apt install latexmk
+</code></pre>
+<h2 id="editeurs">Editeurs</h2>
+<pre><code class="language-bash">$ sudo apt install gummi qtikz
+</code></pre>
+<h1 id="vscode">VSCode</h1>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-bash">$ sudo snap install code --classic
+</code></pre>
+<h2 id="extension-french-language-pack">Extension  French Language Pack</h2>
+<p>Automatique au démarrage.</p>
+<h2 id="extension-latex">Extension Latex</h2>
+<p>Installer l'extension <code>latex-workshop</code>.</p>
+<p>Dépendance :</p>
+<pre><code class="language-bash">$ sudo apt install latexmk
+</code></pre>
+<p>Paramètres pour preview :</p>
+<pre><code>The root file directory : changer %DIR% par /tmp/vscode-latex
+</code></pre>
+<p>Minted : ajouter l'option <code>--shell-escape</code> dans <code>latex-workshop.latex.tools</code> pour le compilateur  <code>latexmk</code> (fichier JSON)</p>
+<pre><code class="language-json">&quot;name&quot;: &quot;latexmk&quot;,
+            &quot;command&quot;: &quot;latexmk&quot;,
+            &quot;args&quot;: [
+                &quot;--shell-escape&quot;,
+                &quot;-synctex=1&quot;,
+                &quot;-interaction=nonstopmode&quot;,
+                &quot;-file-line-error&quot;,
+                &quot;-pdf&quot;,
+                &quot;-outdir=%OUTDIR%&quot;,
+                &quot;%DOC%&quot;
+            ],
+</code></pre>
+<h2 id="extension-sphynx">Extension Sphynx</h2>
+<p>Installer les extensions suivantes uniquement :</p>
+<ul>
+<li>
+<p>reStructuredText Syntax highlighting</p>
+</li>
+<li>
+<p>Esbonio (server)</p>
+</li>
+</ul>
+<pre><code class="language-bash">$ pip install esbonio
+</code></pre>
+<ul>
+<li>Installe l'extension Python de Microsoft.</li>
+</ul>
+<h1 id="python">Python</h1>
+<h2 id="python-is-python-3">Python is Python 3</h2>
+<pre><code class="language-bash">$ sudo apt install python-is-python3 
+</code></pre>
+<h2 id="pip">PIP</h2>
+<pre><code class="language-bash">$ sudo apt install python3-pip
+</code></pre>
+<p>Pour forcer l'installation avec PIP, ajouter dans <code>/etc/environment</code> :</p>
+<pre><code class="language-bash">PIP_BREAK_SYSTEM_PACKAGES=1
+</code></pre>
+<h2 id="librairies">Librairies</h2>
+<pre><code class="language-bash">$ sudo apt install python3-numpy python3-matplotlib python3-scipy 
+#ou
+$ pip install numpy matplolib scipy
+</code></pre>
+<h2 id="editeurs_1">Editeurs</h2>
+<pre><code class="language-bash">$ sudo apt-get install thonny  # BUG !!!
+#ou
+$ pip install thonny
+</code></pre>
+<p>Avec PIP, installer manuellement le raccourci.</p>
+<h2 id="spyder">Spyder</h2>
+<pre><code class="language-bash">$ pip install spyder
+</code></pre>
+<h2 id="jupyter">Jupyter</h2>
+<pre><code class="language-bash">$ pip install jupyter
+</code></pre>
+<h1 id="physique">Physique</h1>
+<h2 id="latis">Latis</h2>
+<p>Fonctionne avec Wine.</p>
+<pre><code class="language-bash">$ msiexe /i Latis.msi
+</code></pre>
+<h2 id="regressi">Regressi</h2>
+<p>Fonctionner avec Wine.</p>
+<pre><code class="language-bash">$ msiexe /i regressi-mpeg-setup.msi
+</code></pre>
+<h2 id="ltspice">LTSpice</h2>
+<pre><code class="language-bash">$ msiexe /i LTSpice.msi
+</code></pre>
+<h1 id="microcontroleurs">Microcontrôleurs</h1>
+<h2 id="udev-rules">Udev rules</h2>
+<p>Règles pour l'accés aux périphériques via <code>udev</code> à mettre dans un nouveau fichier  <code>/etc/udev/rules.d/100-physapp.rules</code> avec le contenu : </p>
+<pre><code class="language-bash"># Agilent / Keysight
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;0957&quot;, MODE=&quot;0666&quot;
+# Siglent
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;f4ec&quot;, MODE=&quot;0666&quot;
+# Arduino UNO R3
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2a03&quot;, MODE=&quot;0666&quot;
+# Carte Arduino R4 minima
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, MODE=&quot;0666&quot;
+# ESP32 - Silicon Labs CP210x UART Bridge
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;10c4&quot;, MODE=&quot;0666&quot;
+# STMicroelectronic
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;0483&quot;, MODE=&quot;0666&quot;
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;0483&quot;, MODE=&quot;374b&quot;
+</code></pre>
+<h2 id="arduino-ide-18x">Arduino IDE 1.8.x</h2>
+<pre><code class="language-bash">$ sudo apt install arduino
+</code></pre>
+<h2 id="arduino-ide-2">Arduino IDE 2</h2>
+<h3 id="installation_1">Installation</h3>
+<p>A partir du fichier ZIP télécharger sur le site d'Arduino.</p>
+<h3 id="probleme-dexecution">Problème d'exécution</h3>
+<p>Arduino IDE 2 est développé avec Electron (Chromium et Node Js) et son code s’exécute dans un environnement limité (bas à sable). Ce qui empèche son lancement dans Gnome !</p>
+<p>L'application <code>apparmor</code> permet de contourner cette restriction. Ajouter le fichier de configuration <code>/etc/apparmor.d/arduinoide</code> avec le contenu :</p>
+<pre><code class="language-bash">abi &lt;abi/4.0&gt;,
+include &lt;tunables/global&gt;
+profile arduino /opt/arduino-ide_2.3.3_Linux_64bit/arduino-ide flags=(unconfined) {
+  userns,
+  include if exists &lt;local/arduino&gt;}
+</code></pre>
+<p>Ne pas oublier de modifier le chemin de l'application Arduino IDE !</p>
+<h2 id="esp32">ESP32</h2>
+<p>Application ESPTool pour la programmation en ligne de commande.</p>
+<pre><code class="language-bash">$ pip3 install --break-system-packages esptool
+</code></pre>
+<h1 id="interfaces-usb">Interfaces USB</h1>
+<h2 id="digilent-analog-discovery-3">Digilent Analog Discovery 3</h2>
+<p>Pilotes <code>adept2.runtime</code> , <code>adept2.utililities</code> et <code>WaveForms</code> sur le site Siglent.</p>
+<pre><code class="language-bash">$ sudo dpkg -i digilent.adept.runtime_2.27.9-amd64.deb digilent.adept.utilities_2.7.1-amd64.deb
+$ sudo dpkg -i digilent.waveforms_3.22.2_amd64.deb
+$ sudo apt install libqt5multimedia5 # Erreur
+$ sudo apt --fix-broken install
+</code></pre>
+<h2 id="analog-device-adalm-2000">Analog Device ADALM 2000</h2>
+<ul>
+<li>Pilote <code>libio</code> :</li>
+</ul>
+<pre><code class="language-bash">$ sudo apt install libiio-utils
+$ iio_info -u ip:192.168.2.1
+</code></pre>
+<ul>
+<li>Logiciel Scopy :</li>
+</ul>
+<pre><code class="language-bash">$ sudo flatpak install Scopy-v1.4.1-Linux-x86-64.flatpak
+$ flatpak run org.adi.Scopy
+</code></pre>
+<ul>
+<li>
+<p>Libairie <code>libm2k</code>  (problème avec 24.04)</p>
+</li>
+<li>
+<p>Python : pas de librairie !</p>
+</li>
+</ul>
+<h1 id="radio-logiciel-sdr">Radio Logiciel (SDR)</h1>
+<h2 id="logiciel-gnu-radio">Logiciel GNU Radio</h2>
+<pre><code class="language-bash"> sudo apt install gnuradio
+</code></pre>
+<h2 id="logiciel-gqrx-sdr">Logiciel Gqrx SDR</h2>
+<pre><code class="language-bash">$ sudo apt install gqrx-sdr
+</code></pre>
+<h2 id="carte-usrp-b200">Carte USRP B200</h2>
+<ul>
+<li>Pilote :</li>
+</ul>
+<pre><code class="language-bash">$ sudo apt install uhd-host
+</code></pre>
+<ul>
+<li>Téléchargement des images :</li>
+</ul>
+<pre><code class="language-bash">$ sudo uhd_images_downloader
+</code></pre>
+<ul>
+<li>Droits d'acces aux cartes :</li>
+</ul>
+<pre><code class="language-bash">$ sudo cp /usr/libexec/uhd/utils/uhd-usrp.rules /etc/udev/rules.d/
+$ sudo udevadm control --reload-rules
+$ sudo udevadm trigger
+</code></pre>
+<ul>
+<li>Recherche :</li>
+</ul>
+<pre><code class="language-bash">$ uhd_find_devices
+</code></pre>
+<ul>
+<li>
+<p>GNURadio : USRP Source.</p>
+</li>
+<li>
+<p>GQRX : support natif.</p>
+</li>
+</ul>
+<h2 id="carte-adalm-pluto">Carte ADALM Pluto</h2>
+<ul>
+<li>Pilote :</li>
+</ul>
+<pre><code class="language-bash">$ sudo apt install libiio-utils
+</code></pre>
+<ul>
+<li>Information sur la carte :</li>
+</ul>
+<pre><code class="language-bash">$ iio_info -u ip:192.168.2.1
+</code></pre>
+<ul>
+<li>Session SSH (mot de passe = analog) :</li>
+</ul>
+<pre><code class="language-bash">$ ssh root@192.168.2.1
+</code></pre>
+<ul>
+<li>
+<p>GnuRadio : PlutoSDR Source</p>
+</li>
+<li>
+<p>GQRX : ne fonctionne pas !</p>
+</li>
+<li>
+<p>Python :</p>
+</li>
+</ul>
+<pre><code class="language-bash">$ pip install pyadi-iio
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-11-19 04:26:17.908409+00:00
+-->
