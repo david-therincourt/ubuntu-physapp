@@ -1,0 +1,8 @@
+site_name: Post-installation Ubuntu 24.04
+
+# MkDocs Bootstrap Theme
+theme:
+  name: materia
+
+nav:
+  - Home: index.md
