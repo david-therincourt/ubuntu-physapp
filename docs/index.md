@@ -1,6 +1,5 @@
 # Ubuntu 24.04 - Post installation
 
-
 # Bases
 
 ## Gnome
@@ -49,11 +48,6 @@ else
 fi
 ```
 
-
-
-
-
-
 # Web
 
 ## Chrome
@@ -71,12 +65,7 @@ $ sudo apt install google-chrome-stable
 $ sudo snap install chromium 
 ```
 
-
-
-
-
 # Multimédia
-
 
 ## Codecs MP3, ...
 
@@ -90,12 +79,6 @@ $ sudo apt install ubuntu-restricted-extras
 $ sudo apt install vlc mplayer mplayer-gui
 ```
 
-
-
-
-
-
-
 # Bureautique
 
 ## Utilitaires PDF
@@ -104,16 +87,11 @@ $ sudo apt install vlc mplayer mplayer-gui
 $ sudo apt-get install xournal xournalpp pdfarranger 
 ```
 
-
 ## Copie d'écran et annotation d'image
 
 ```bash
 $ sudo apt install ksnip
 ```
-
-
-
-
 
 # Markdown
 
@@ -141,16 +119,12 @@ Eviter Flatpak !
 $ sudo flatpak install flathub com.github.marktext.marktext
 ```
 
-
-
 # Sphinx
 
 ```bash
 $ sudo apt install python3-stemmer
 $ pip install --break-system-packages sphinx sphinx-rtd-theme sphinx-copybutton sphinx-prompt esbonio
 ```
-
-
 
 # LaTeX
 
@@ -178,9 +152,6 @@ $ sudo apt install latexmk
 ```bash
 $ sudo apt install gummi qtikz
 ```
-
-
-
 
 # VSCode
 
@@ -240,11 +211,6 @@ $ pip install esbonio
 
 - Installe l'extension Python de Microsoft.
 
-
-
-
-
-
 # Python
 
 ## Python is Python 3
@@ -285,8 +251,10 @@ Avec PIP, installer manuellement le raccourci.
 
 ## Spyder
 
+Avec flatpak
+
 ```bash
-$ pip install spyder
+$ sudo flatpak install spyder
 ```
 
 ## Jupyter
@@ -295,10 +263,6 @@ $ pip install spyder
 $ pip install jupyter
 $ sudo apt install texlive-xetex # Pour export PDF dans Jupyter Notebook
 ```
-
-
-
-
 
 # Physique
 
@@ -382,11 +346,9 @@ Application ESPTool pour la programmation en ligne de commande.
 $ pip3 install --break-system-packages esptool
 ```
 
-
-
 # Interfaces USB
 
-## Digilent Analog Discovery 3 
+## Digilent Analog Discovery 3
 
 Pilotes `adept2.runtime` , `adept2.utililities` et `WaveForms` sur le site Siglent.
 
@@ -396,7 +358,6 @@ $ sudo dpkg -i digilent.waveforms_3.22.2_amd64.deb
 $ sudo apt install libqt5multimedia5 # Erreur
 $ sudo apt --fix-broken install
 ```
-
 
 ## Analog Device ADALM 2000
 
@@ -413,16 +374,12 @@ $ iio_info -u ip:192.168.2.1
 $ sudo flatpak install Scopy-v1.4.1-Linux-x86-64.flatpak
 $ flatpak run org.adi.Scopy
 ```
+
 Lourd à installer !
 
 - Libairie `libm2k`  (problème avec 24.04)
 
 - Python : pas de librairie !
-
-
-
-
-
 
 # Radio Logiciel (SDR)
 
